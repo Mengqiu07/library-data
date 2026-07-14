@@ -543,29 +543,9 @@
     }
 
     // 扫描功能
-    function isMobile() {
-      return /Android|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
-    }
-
-    function hasCamera() {
-      return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
-    }
-
     document.getElementById('scanBtn').addEventListener('click', function() {
-      if (isMobile() && hasCamera()) {
-        openScanner();
-      } else {
-        showScanNotAvailable();
-      }
+      openScanner();
     });
-
-    function showScanNotAvailable() {
-      const scanContent = document.getElementById('scanContent');
-      scanContent.innerHTML = `
-        <p style="font-size:0.9rem;color:#999;margin:16px 0;">⚠️ 当前设备不支持扫描</p>
-        <p style="font-size:0.8rem;color:#bbb;">请使用手机或平板等移动设备进行二维码扫描</p>`;
-      document.getElementById('scanModal').classList.add('active');
-    }
 
     function closeScanModal() {
       document.getElementById('scanModal').classList.remove('active');
@@ -606,8 +586,8 @@
         }
       } catch (err) {
         scanContent.innerHTML = `
-          <p style="color:#e74c3c;margin:16px 0;">无法打开摄像头</p>
-          <p style="font-size:0.8rem;color:#999;">请检查摄像头权限设置</p>`;
+          <p style="font-size:0.9rem;color:#999;margin:16px 0;">⚠️ 当前设备不支持扫描</p>
+          <p style="font-size:0.8rem;color:#bbb;">请使用带有摄像头的设备进行二维码扫描</p>`;
       }
     }
 
