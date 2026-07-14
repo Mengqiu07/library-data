@@ -1,5 +1,22 @@
 [
   {
+    "id": "BK000004",
+    "title": "史记 列传",
+    "publisher": "江苏凤凰科技出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-14 23:40:11",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《史记 列传》，存放于lyr书桌",
+        "time": "2026-07-14 23:40:11",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
     "id": "BK000003",
     "title": "国史概要",
     "publisher": "复旦大学出版社",
