@@ -15,6 +15,7 @@
       min-height: 100vh;
     }
 
+    /* ========== 主页头部 ========== */
     .header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #fff;
@@ -51,9 +52,7 @@
       transition: background 0.3s;
     }
 
-    .search-input-wrap:focus-within {
-      background: rgba(255,255,255,0.35);
-    }
+    .search-input-wrap:focus-within { background: rgba(255,255,255,0.35); }
 
     .search-input-wrap input {
       flex: 1;
@@ -65,9 +64,7 @@
       font-size: 0.95rem;
     }
 
-    .search-input-wrap input::placeholder {
-      color: rgba(255,255,255,0.7);
-    }
+    .search-input-wrap input::placeholder { color: rgba(255,255,255,0.7); }
 
     .search-input-wrap .search-icon {
       color: rgba(255,255,255,0.8);
@@ -103,10 +100,9 @@
       flex-shrink: 0;
     }
 
-    .btn-scan:hover {
-      background: rgba(255,255,255,0.35);
-    }
+    .btn-scan:hover { background: rgba(255,255,255,0.35); }
 
+    /* ========== 统计栏 ========== */
     .stats-bar {
       display: flex;
       justify-content: space-around;
@@ -117,25 +113,12 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
 
-    .stat-item {
-      text-align: center;
-    }
+    .stat-item { text-align: center; }
+    .stat-item .num { font-size: 1.5rem; font-weight: 700; color: #667eea; }
+    .stat-item .label { font-size: 0.75rem; color: #999; margin-top: 2px; }
 
-    .stat-item .num {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #667eea;
-    }
-
-    .stat-item .label {
-      font-size: 0.75rem;
-      color: #999;
-      margin-top: 2px;
-    }
-
-    .book-list {
-      padding: 0 16px 20px;
-    }
+    /* ========== 图书列表 ========== */
+    .book-list { padding: 0 16px 20px; }
 
     .book-card {
       background: #fff;
@@ -146,18 +129,15 @@
       display: flex;
       gap: 12px;
       align-items: flex-start;
+      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .book-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+    .book-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-    .book-info {
-      flex: 1;
-      min-width: 0;
-    }
+    .book-info { flex: 1; min-width: 0; }
 
     .book-title {
       font-size: 1.05rem;
@@ -177,11 +157,7 @@
       color: #888;
     }
 
-    .book-meta span {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+    .book-meta span { display: flex; align-items: center; gap: 4px; }
 
     .book-id {
       font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
@@ -197,15 +173,8 @@
       font-weight: 500;
     }
 
-    .status-available {
-      background: #e6f7e9;
-      color: #389e0d;
-    }
-
-    .status-borrowed {
-      background: #fff7e6;
-      color: #d48806;
-    }
+    .status-available { background: #e6f7e9; color: #389e0d; }
+    .status-borrowed { background: #fff7e6; color: #d48806; }
 
     .book-qr {
       flex-shrink: 0;
@@ -213,28 +182,133 @@
       text-align: center;
     }
 
-    .book-qr canvas, .book-qr img {
-      border-radius: 4px;
+    .book-qr canvas, .book-qr img { border-radius: 4px; }
+
+    .qr-label { font-size: 0.65rem; color: #bbb; margin-top: 2px; }
+
+    .empty-state { text-align: center; padding: 60px 20px; color: #bbb; }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+
+    .result-count { padding: 8px 16px; font-size: 0.8rem; color: #999; }
+
+    /* ========== 详情页 ========== */
+    .detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 16px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
-    .qr-label {
-      font-size: 0.65rem;
-      color: #bbb;
-      margin-top: 2px;
+    .btn-back {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      flex-shrink: 0;
+      text-decoration: none;
     }
 
-    .empty-state {
+    .btn-back:hover { background: rgba(255,255,255,0.35); }
+
+    .detail-header h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .detail-content {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .detail-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       text-align: center;
-      padding: 60px 20px;
-      color: #bbb;
     }
 
-    .empty-state .empty-icon {
-      font-size: 3rem;
+    .detail-card .book-icon {
+      font-size: 3.5rem;
       margin-bottom: 12px;
     }
 
-    /* Modal */
+    .detail-card .detail-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .detail-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .detail-field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .detail-field .field-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .detail-field .field-label { color: #999; font-size: 0.78rem; margin-bottom: 2px; }
+    .detail-field .field-value { color: #333; font-weight: 500; word-break: break-all; }
+    .detail-field .field-id {
+      font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+      color: #888;
+    }
+
+    .detail-qr-section {
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+
+    .detail-qr-section .qr-title {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .detail-qr-section canvas,
+    .detail-qr-section img {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .detail-status {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    /* ========== Modal ========== */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -257,14 +331,9 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.2);
     }
 
-    .modal h3 {
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-    }
+    .modal h3 { margin-bottom: 16px; font-size: 1.1rem; }
 
-    .modal .large-qr canvas, .modal .large-qr img {
-      margin: 0 auto;
-    }
+    .modal .large-qr canvas, .modal .large-qr img { margin: 0 auto; }
 
     .modal .book-title-large {
       font-size: 1rem;
@@ -311,22 +380,7 @@
       pointer-events: none;
     }
 
-    .toast.show {
-      opacity: 1;
-    }
-
-    /* Result count */
-    .result-count {
-      padding: 8px 16px;
-      font-size: 0.8rem;
-      color: #999;
-    }
-
-    .no-scan-tip {
-      font-size: 0.85rem;
-      color: #999;
-      margin: 8px 0;
-    }
+    .toast.show { opacity: 1; }
 
     /* Responsive */
     @media (min-width: 768px) {
@@ -347,43 +401,89 @@
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>📚 我的图书馆</h1>
-    <div class="search-box">
-      <div class="search-input-wrap">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="搜索书名、编号或出版社..." autocomplete="off">
-        <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+
+  <!-- ==================== 主页视图 ==================== -->
+  <div id="homeView">
+    <div class="header">
+      <h1>📚 我的图书馆</h1>
+      <div class="search-box">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="搜索书名、编号或出版社..." autocomplete="off">
+          <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+        </div>
+        <button class="btn-scan" id="scanBtn" title="扫描二维码">📷</button>
       </div>
-      <button class="btn-scan" id="scanBtn" title="扫描二维码">📷</button>
+    </div>
+
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-item">
+        <div class="num" id="totalCount">0</div>
+        <div class="label">总藏书</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" id="availableCount">0</div>
+        <div class="label">可借阅</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" id="borrowedCount">0</div>
+        <div class="label">已借出</div>
+      </div>
+    </div>
+
+    <div class="result-count" id="resultCount"></div>
+
+    <div class="book-list" id="bookList">
+      <div class="empty-state">
+        <div class="empty-icon">📭</div>
+        <p>暂无图书数据</p>
+      </div>
     </div>
   </div>
 
-  <div class="stats-bar" id="statsBar">
-    <div class="stat-item">
-      <div class="num" id="totalCount">0</div>
-      <div class="label">总藏书</div>
+  <!-- ==================== 详情页视图 ==================== -->
+  <div id="detailView" style="display:none;">
+    <div class="detail-header">
+      <a class="btn-back" href="?">←</a>
+      <h2 id="detailHeaderTitle">图书详情</h2>
     </div>
-    <div class="stat-item">
-      <div class="num" id="availableCount">0</div>
-      <div class="label">可借阅</div>
-    </div>
-    <div class="stat-item">
-      <div class="num" id="borrowedCount">0</div>
-      <div class="label">已借出</div>
+    <div class="detail-content">
+      <div class="detail-card">
+        <div class="book-icon">📖</div>
+        <div class="detail-title" id="detailTitle"></div>
+        <div class="detail-status" id="detailStatus"></div>
+        <div class="detail-fields">
+          <div class="detail-field">
+            <span class="field-icon">🏢</span>
+            <div>
+              <div class="field-label">出版社</div>
+              <div class="field-value" id="detailPublisher"></div>
+            </div>
+          </div>
+          <div class="detail-field">
+            <span class="field-icon">📍</span>
+            <div>
+              <div class="field-label">存放位置</div>
+              <div class="field-value" id="detailLocation"></div>
+            </div>
+          </div>
+          <div class="detail-field">
+            <span class="field-icon">🔢</span>
+            <div>
+              <div class="field-label">图书编号</div>
+              <div class="field-value field-id" id="detailId"></div>
+            </div>
+          </div>
+        </div>
+        <div class="detail-qr-section">
+          <div class="qr-title">📱 扫码查看本书</div>
+          <div id="detailQr"></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="result-count" id="resultCount"></div>
-
-  <div class="book-list" id="bookList">
-    <div class="empty-state">
-      <div class="empty-icon">📭</div>
-      <p>暂无图书数据</p>
-    </div>
-  </div>
-
-  <!-- QR Modal -->
+  <!-- QR Modal（主页弹窗，保留兼容） -->
   <div class="modal-overlay" id="qrModal">
     <div class="modal">
       <h3>📱 图书二维码</h3>
@@ -407,12 +507,17 @@
 
   <script>
     let books = [];
-    let currentQrBook = null;
 
     // 获取每本书的专属链接
     function getBookUrl(bookId) {
       const base = window.location.origin + window.location.pathname;
       return base + '?book=' + bookId;
+    }
+
+    // 判断当前是否为详情页
+    function getBookIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('book');
     }
 
     // 加载数据
@@ -423,18 +528,21 @@
       } catch (e) {
         books = [];
       }
+
+      const bookId = getBookIdFromUrl();
+      if (bookId) {
+        showDetailView(bookId);
+      } else {
+        showHomeView();
+      }
+    }
+
+    // ========== 主页视图 ==========
+    function showHomeView() {
+      document.getElementById('homeView').style.display = 'block';
+      document.getElementById('detailView').style.display = 'none';
       renderBooks(books);
       updateStats(books);
-
-      // 检查URL参数，如果有book参数则自动打开对应图书
-      const params = new URLSearchParams(window.location.search);
-      const bookId = params.get('book');
-      if (bookId) {
-        setTimeout(() => {
-          const book = books.find(b => b.id === bookId);
-          if (book) showQrModal(bookId);
-        }, 300);
-      }
     }
 
     function updateStats(list) {
@@ -463,7 +571,7 @@
       resultCount.textContent = `共 ${list.length} 本图书`;
 
       container.innerHTML = list.map(book => `
-        <div class="book-card">
+        <a class="book-card" href="?book=${encodeURIComponent(book.id)}">
           <div class="book-info">
             <div class="book-title">${escapeHtml(book.title)}</div>
             <div class="book-meta">
@@ -475,14 +583,14 @@
               </span>
             </div>
           </div>
-          <div class="book-qr" data-id="${escapeHtml(book.id)}" onclick="showQrModal('${escapeHtml(book.id)}')">
+          <div class="book-qr" onclick="event.stopPropagation(); event.preventDefault(); showQrModal('${escapeHtml(book.id)}')">
             <div class="qr-placeholder" id="qr-${escapeHtml(book.id)}"></div>
             <div class="qr-label">扫码查看</div>
           </div>
-        </div>
+        </a>
       `).join('');
 
-      // 渲染二维码（内容为每本书的专属链接）
+      // 渲染二维码
       list.forEach(book => {
         const el = document.getElementById(`qr-${book.id}`);
         if (el) {
@@ -497,10 +605,49 @@
       });
     }
 
+    // ========== 详情页视图 ==========
+    function showDetailView(bookId) {
+      const book = books.find(b => b.id === bookId);
+      if (!book) {
+        // 图书不存在，返回主页
+        window.location.href = '?';
+        return;
+      }
+
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('detailView').style.display = 'block';
+
+      document.getElementById('detailHeaderTitle').textContent = book.title;
+      document.getElementById('detailTitle').textContent = book.title;
+      document.getElementById('detailPublisher').textContent = book.publisher;
+      document.getElementById('detailLocation').textContent = book.location;
+      document.getElementById('detailId').textContent = '#' + book.id;
+
+      const statusEl = document.getElementById('detailStatus');
+      if (book.status === 'available') {
+        statusEl.className = 'detail-status status-available';
+        statusEl.textContent = '可借阅';
+      } else {
+        statusEl.className = 'detail-status status-borrowed';
+        statusEl.textContent = '已借出';
+      }
+
+      // 渲染详情页大二维码
+      const qrContainer = document.getElementById('detailQr');
+      qrContainer.innerHTML = '';
+      new QRCode(qrContainer, {
+        text: getBookUrl(book.id),
+        width: 200,
+        height: 200,
+        colorDark: '#333',
+        colorLight: '#fff',
+      });
+    }
+
+    // ========== 主页弹窗二维码 ==========
     function showQrModal(bookId) {
       const book = books.find(b => b.id === bookId);
       if (!book) return;
-      currentQrBook = book;
 
       document.getElementById('modalTitle').textContent = book.title;
       document.getElementById('modalId').textContent = '#' + book.id;
@@ -520,14 +667,13 @@
 
     function closeQrModal() {
       document.getElementById('qrModal').classList.remove('active');
-      currentQrBook = null;
     }
 
     document.getElementById('qrModal').addEventListener('click', function(e) {
       if (e.target === this) closeQrModal();
     });
 
-    // 搜索
+    // ========== 搜索 ==========
     const searchInput = document.getElementById('searchInput');
     const clearBtn = document.getElementById('clearBtn');
 
@@ -558,7 +704,7 @@
       searchInput.focus();
     }
 
-    // 扫描功能
+    // ========== 扫描 ==========
     document.getElementById('scanBtn').addEventListener('click', function() {
       openScanner();
     });
@@ -572,7 +718,6 @@
       if (e.target === this) closeScanModal();
     });
 
-    // 摄像头扫描
     let videoStream = null;
     let scanInterval = null;
 
@@ -594,7 +739,6 @@
         const video = document.getElementById('scanVideo');
         video.srcObject = videoStream;
 
-        // 用 BarcodeDetector API 或定时截图检测
         if ('BarcodeDetector' in window) {
           startBarcodeDetector(video);
         } else {
@@ -629,18 +773,16 @@
       stopScanner();
       closeScanModal();
 
-      // 尝试从URL中提取图书编号，也兼容直接扫到纯编号的情况
       let bookId = code;
       try {
         const url = new URL(code);
         bookId = url.searchParams.get('book') || code;
-      } catch (e) {
-        // 不是URL，直接当作编号处理
-      }
+      } catch (e) {}
 
       const book = books.find(b => b.id === bookId);
       if (book) {
-        showQrModal(book.id);
+        // 跳转到详情页
+        window.location.href = getBookUrl(book.id);
       } else {
         showToast(`未找到编号为 ${bookId} 的图书`);
       }
@@ -657,7 +799,7 @@
       }
     }
 
-    // Toast
+    // ========== Toast ==========
     function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.textContent = msg;
