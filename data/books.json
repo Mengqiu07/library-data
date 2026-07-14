@@ -30,6 +30,24 @@
         "detail": "添加图书《国史概要》，存放于lyr书桌",
         "time": "2026-07-14 17:32:36",
         "operator": "管理员"
+      },
+      {
+        "action": "transfer",
+        "actionLabel": "转移图书",
+        "detail": "从\"lyr书桌\"转移到\"走廊\"",
+        "time": "2026-07-14 23:45:48",
+        "operator": "管理员",
+        "oldLocation": "lyr书桌",
+        "newLocation": "走廊"
+      },
+      {
+        "action": "transfer",
+        "actionLabel": "转移图书",
+        "detail": "从\"走廊\"转移到\"lyr书桌\"",
+        "time": "2026-07-14 23:46:08",
+        "operator": "管理员",
+        "oldLocation": "走廊",
+        "newLocation": "lyr书桌"
       }
     ]
   },
@@ -47,6 +65,21 @@
         "detail": "添加图书《人类群星闪耀时》，存放于lyr书桌",
         "time": "2026-07-14 17:32:20",
         "operator": "管理员"
+      },
+      {
+        "action": "remove",
+        "actionLabel": "移除图书",
+        "detail": "移除图书，备注：丢了",
+        "time": "2026-07-14 23:45:15",
+        "operator": "管理员"
+      },
+      {
+        "action": "recover",
+        "actionLabel": "追回图书",
+        "detail": "追回图书，原因：找回来了",
+        "time": "2026-07-14 23:45:35",
+        "operator": "管理员",
+        "recoverReason": "找回来了"
       }
     ]
   },

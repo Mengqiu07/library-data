@@ -409,6 +409,12 @@
     let books = [];
     let currentQrBook = null;
 
+    // 获取每本书的专属链接
+    function getBookUrl(bookId) {
+      const base = window.location.origin + window.location.pathname;
+      return base + '?book=' + bookId;
+    }
+
     // 加载数据
     async function loadBooks() {
       try {
@@ -419,6 +425,16 @@
       }
       renderBooks(books);
       updateStats(books);
+
+      // 检查URL参数，如果有book参数则自动打开对应图书
+      const params = new URLSearchParams(window.location.search);
+      const bookId = params.get('book');
+      if (bookId) {
+        setTimeout(() => {
+          const book = books.find(b => b.id === bookId);
+          if (book) showQrModal(bookId);
+        }, 300);
+      }
     }
 
     function updateStats(list) {
@@ -466,12 +482,12 @@
         </div>
       `).join('');
 
-      // 渲染二维码
+      // 渲染二维码（内容为每本书的专属链接）
       list.forEach(book => {
         const el = document.getElementById(`qr-${book.id}`);
         if (el) {
           new QRCode(el, {
-            text: book.id,
+            text: getBookUrl(book.id),
             width: 64,
             height: 64,
             colorDark: '#333',
@@ -492,7 +508,7 @@
       const largeQr = document.getElementById('largeQr');
       largeQr.innerHTML = '';
       new QRCode(largeQr, {
-        text: book.id,
+        text: getBookUrl(book.id),
         width: 200,
         height: 200,
         colorDark: '#333',
@@ -613,11 +629,20 @@
       stopScanner();
       closeScanModal();
 
-      const book = books.find(b => b.id === code);
+      // 尝试从URL中提取图书编号，也兼容直接扫到纯编号的情况
+      let bookId = code;
+      try {
+        const url = new URL(code);
+        bookId = url.searchParams.get('book') || code;
+      } catch (e) {
+        // 不是URL，直接当作编号处理
+      }
+
+      const book = books.find(b => b.id === bookId);
       if (book) {
         showQrModal(book.id);
       } else {
-        showToast(`未找到编号为 ${code} 的图书`);
+        showToast(`未找到编号为 ${bookId} 的图书`);
       }
     }
 
