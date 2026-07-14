@@ -1,0 +1,53 @@
+[
+  {
+    "id": "BK000003",
+    "title": "国史概要",
+    "publisher": "复旦大学出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-14 17:32:36",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《国史概要》，存放于lyr书桌",
+        "time": "2026-07-14 17:32:36",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
+    "id": "BK000002",
+    "title": "人类群星闪耀时",
+    "publisher": "江苏凤凰文艺出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-14 17:32:20",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《人类群星闪耀时》，存放于lyr书桌",
+        "time": "2026-07-14 17:32:20",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
+    "id": "BK000001",
+    "title": "白夜",
+    "publisher": "浙江文学出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-14 17:30:34",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《白夜》，存放于lyr书桌",
+        "time": "2026-07-14 17:30:34",
+        "operator": "管理员"
+      }
+    ]
+  }
+]
