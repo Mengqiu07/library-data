@@ -1,5 +1,56 @@
 [
   {
+    "id": "BK000036",
+    "title": "信息学奥林匹克词典",
+    "publisher": "机械工业出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-15 13:14:31",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《信息学奥林匹克词典》，存放于lyr书桌",
+        "time": "2026-07-15 13:14:31",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
+    "id": "BK000035",
+    "title": "信息学奥林匹克竞赛初赛精讲精练",
+    "publisher": "机械工业出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-15 13:14:09",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《信息学奥林匹克竞赛初赛精讲精练》，存放于lyr书桌",
+        "time": "2026-07-15 13:14:09",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
+    "id": "BK000034",
+    "title": "毛泽东 邓小平 江泽民 论科学发展观",
+    "publisher": "中央文献出版社",
+    "location": "lyr书桌",
+    "status": "available",
+    "createdAt": "2026-07-15 13:13:21",
+    "logs": [
+      {
+        "action": "add",
+        "actionLabel": "添加图书",
+        "detail": "添加图书《毛泽东 邓小平 江泽民 论科学发展观》，存放于lyr书桌",
+        "time": "2026-07-15 13:13:21",
+        "operator": "管理员"
+      }
+    ]
+  },
+  {
     "id": "BK000033",
     "title": "CCF中学生计算机程序设计基础篇",
     "publisher": "科学出版社",
